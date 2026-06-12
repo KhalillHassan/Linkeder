@@ -1,0 +1,237 @@
+.profile-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-deck {
+  position: relative;
+  width: 680px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-card {
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+}
+
+.deck-card-main {
+  position: relative;
+  z-index: 3;
+}
+
+.deck-card-left,
+.deck-card-right {
+  position: absolute;
+  z-index: 1;
+  opacity: 0.35;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+
+.deck-card-left {
+  transform: translateX(-165px) scale(0.88) rotateY(14deg) rotateZ(-4deg);
+}
+
+.deck-card-right {
+  transform: translateX(165px) scale(0.88) rotateY(-14deg) rotateZ(4deg);
+}
+
+.deck-card-main {
+  transform: scale(1);
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 26px;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+
+.action-button {
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pass-button {
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+
+  box-shadow: 0 10px 24px var(--button-shadow);
+}
+
+.connect-button {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  color: white;
+
+  box-shadow: 0 12px 28px var(--primary-glow);
+}
+
+.action-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+}
+
+.action-label {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+/* Empty state when no profiles are left */
+.empty-state {
+  width: 420px;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  background-color: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  padding: 32px;
+}
+
+.empty-title {
+  margin: 0 0 10px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.empty-description {
+  margin: 0 0 22px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.restart-button {
+  border: none;
+  cursor: pointer;
+
+  padding: 12px 18px;
+  border-radius: 14px;
+
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 12px 28px var(--primary-glow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restart-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px var(--primary-glow);
+}
+
+.connect-toast {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: rgba(34, 197, 94, 0.18);
+  color: #15803d;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+
+  padding: 12px 18px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.18);
+
+  z-index: 120;
+
+  animation: toastPop 0.25s ease;
+}
+
+@keyframes toastPop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 1000px) {
+  .profile-deck {
+    width: 560px;
+  }
+
+  .deck-card-left {
+    transform: translateX(-120px) scale(0.86) rotateY(12deg) rotateZ(-4deg);
+  }
+
+  .deck-card-right {
+    transform: translateX(120px) scale(0.86) rotateY(-12deg) rotateZ(4deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .profile-deck {
+    width: 100%;
+  }
+
+  .deck-card-left,
+  .deck-card-right {
+    display: none;
+  }
+
+  .profile-stack {
+    width: 100%;
+  }
+
+  .profile-actions {
+    margin-top: 8px;
+  }
+}

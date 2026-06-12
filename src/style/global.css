@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #5b3ff2;
+  --primary-light: #7c5cff;
+  --primary-dark: #4b32d9;
+
+  --background: #f7f7fb;
+  --card-bg: #ffffff;
+
+  --text-main: #111827;
+  --text-muted: #6b7280;
+
+  --skill-bg: #eee9ff;
+  --skill-text: #5b3ff2;
+
+  --match-start: #7c5cff;
+  --match-end: #5b3ff2;
+  --match-text: #ffffff;
+  --match-glow: rgba(91, 63, 242, 0.35);
+
+  --button-shadow: rgba(17, 24, 39, 0.12);
+  --primary-glow: rgba(91, 63, 242, 0.35);
+
+  --shadow-soft: 0 18px 45px rgba(17, 24, 39, 0.12);
+}
+
+[data-theme="dark"] {
+  --background: #0f1220;
+  --card-bg: #171a2a;
+
+  --text-main: #f8fafc;
+  --text-muted: #9ca3af;
+
+  --skill-bg: rgba(124, 92, 255, 0.18);
+  --skill-text: #a78bfa;
+
+  --button-shadow: rgba(0, 0, 0, 0.35);
+  --primary-glow: rgba(124, 92, 255, 0.3);
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--background);
+}
+
+.main-content {
+  flex: 1;
+  height: 100vh;
+  padding: 18px 48px 14px;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.page-header {
+  width: 100%;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+.page-title {
+  margin: 0 0 4px;
+  font-size: 32px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.page-title span {
+  color: var(--primary);
+}
+
+.page-description {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.card-area {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (max-width: 1000px) {
+  .main-content {
+    padding: 18px 28px 14px;
+  }
+
+  .page-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    display: block;
+  }
+
+  .main-content {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    padding: 18px 16px 28px;
+    overflow: visible;
+  }
+
+  .page-header {
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+
+  .page-title {
+    font-size: 25px;
+    white-space: normal;
+  }
+
+  .page-description {
+    font-size: 14px;
+  }
+
+  .card-area {
+    align-items: flex-start;
+  }
+}

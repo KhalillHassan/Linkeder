@@ -1,0 +1,88 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  padding: 24px 18px;
+  overflow: hidden;
+
+  background-color: var(--card-bg);
+  border-right: 1px solid rgba(17, 24, 39, 0.08);
+  padding: 24px 16px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 32px;
+}
+
+.logo-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--primary);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-link {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-muted);
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: var(--skill-bg);
+  color: var(--primary);
+}
+
+.sidebar-link.active {
+  background-color: var(--skill-bg);
+  color: var(--primary);
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.logout-link:hover {
+  background-color: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+}
